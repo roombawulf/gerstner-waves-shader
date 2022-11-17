@@ -7,7 +7,7 @@ import waterVertexShader from './shaders/water/vertex.glsl'
 import waterFragmentShader from './shaders/water/fragment.glsl'
 
 // Debug
-const gui = new dat.GUI({ width: 200 })
+const gui = new dat.GUI({ width: 300 })
 gui.close()
 const wave1 = gui.addFolder('Wave 1')
 const wave2 = gui.addFolder('Wave 2')
