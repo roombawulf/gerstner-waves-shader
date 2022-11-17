@@ -1,16 +1,13 @@
-# Three.js Journey
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
+# Gerstner Waves Shader
 
-``` bash
-# Install dependencies (only the first time)
-npm install
+This is a wave shader written in GLSL and hosted in a [THREE.JS](https://threejs.org/) environment. 
 
-# Run the local server at localhost:8080
-npm run dev
+A live demo can be [seen here](https://gerstner-waves-shader.vercel.app/)
 
-# Build for production in the dist/ directory
-npm run build
-```
+![](gerstnerShaderPreview.gif)
+
+## Resources
+
+ - [Catlike Coding Waves Tutorial](https://catlikecoding.com/unity/tutorials/flow/waves/)
+ - [WEBGL Fundamentals - Point Lights](https://webglfundamentals.org/webgl/lessons/webgl-3d-lighting-point.html)
