@@ -7,7 +7,7 @@ import waterVertexShader from './shaders/water/vertex.glsl'
 import waterFragmentShader from './shaders/water/fragment.glsl'
 
 // Debug
-const gui = new dat.GUI({ width: 300 })
+const gui = new dat.GUI()
 gui.close()
 const wave1 = gui.addFolder('Wave 1')
 const wave2 = gui.addFolder('Wave 2')
@@ -38,19 +38,39 @@ window.addEventListener('resize', () =>
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+    // Update camera z-pos
+    if (window.innerWidth < 800){
+        controls.minDistance = 6
+        controls.maxDistance = 15
+        camera.position.z = 10.5
+    }
+    else {
+        controls.minDistance = 1
+        controls.maxDistance = 6
+        camera.position.z = 4.5
+    }
 })
 
 
 // Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(0.75, 4, 4.5)
+camera.position.set(0.75, 4, 0.1)
 scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
+if (window.innerWidth < 800){
+    controls.minDistance = 6
+    controls.maxDistance = 15
+    camera.position.z = 10.5
+}
+else{
+    controls.minDistance = 1
+    controls.maxDistance = 6
+    camera.position.z = 4.5
+}
 controls.enableDamping = true
-controls.minDistance = 1
-controls.maxDistance = 6
 controls.maxPolarAngle = Math.PI * 0.45
 
 // Wave Plane Geometry
