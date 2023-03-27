@@ -1,9 +1,4 @@
-*
-!.gitignore
-!gerstnerShaderPreview.gif
-!readme.md
-!src
-!src/shaders/
-!src/shaders/**
-!src/script.js
+node_modules
+package-lock.json
 .vercel
+dist
